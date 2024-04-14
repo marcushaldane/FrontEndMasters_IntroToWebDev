@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./coffee.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"/>
     <title>Coffee Masters Checkout</title>
 </head>
-<body>
-    <header>
+<body class="coffee">
+    <header class="coffee">
         <h1>Coffee Masters Checkout Page</h1>
         <nav class="top-nav">
-            <ul class="top-nav-list">
+            <ul class="top-nav-list flex-container jc-sa">
                 <li class="top-nav-list-item">
                     <a href="./index.html">Go to Home Page</a>
                 </li>
@@ -23,5 +24,69 @@
             </ul>
         </nav>
     </header>
+    
+    <div class="coffee_header flex-container ai-center">
+        <img class="coffee_masters_logo" src="https://btholt.github.io/complete-intro-to-web-dev-v3/images/coffee_masters_logo.png" alt="Coffee Masters Logo">
+        <h2 class="coffee_masters_header">Coffee Masters</h2>
+    </div>
+
+    <div class="window">
+        <h2>Items</h2>
+        <ul>
+            <li class="item"> Cappuccino  $3.35
+                <ul>
+                    <li class="add-on">Lite Foam</li>
+                </ul>
+            </li>
+            <li class="item"> Cappuccino  $3.85
+                <ul>
+                    <li class="add-on">Lite Milk</li>
+                    <li class="add-on">Double Espresso</li>
+                </ul>
+            </li>
+            <li class="item"> Croissant  $2.45
+                <ul>
+                    <li class="add-on">Butter</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="window">
+        <h2>Name</h2>
+        <div class="example-group">
+            <label for="example" class="input-label">Name For Order</label>
+            <input id="example" class="example-input" placeholder="Name"/>
+        </div>
+    </div>
+
+    <div class="window">
+        <h2>Payment</h2>
+        <div class="example-group">
+            <label for="example" class="input-label">Card Number</label>
+            <input id="example" class="example-input" placeholder="0000 0000 0000 0000"/>
+        </div>
+        <div class="example-group">
+            <label for="example" class="input-label">CCV Number</label>
+            <input id="example" class="example-input" placeholder="000"/>
+        </div>
+    </div>
+    
+    <div>
+        <div class="Subtotal flex-container jc-sa">
+            <p>Subtotal:</p>
+            <p>$9.65</p>
+        </div>
+        <div class="Tax flex-container jc-sa">
+            <p>Tax:</p>
+            <p>$0.82</p>
+        </div>
+        <div class="Total flex-container jc-sa">
+            <p>Total:</p>
+            <p>$10.47</p>
+        </div>
+    </div>
+
+    <button>Place Order</button>
 </body>
 </html>

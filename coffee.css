@@ -1,3 +1,108 @@
+* {
+    box-sizing: border-box;
+}
+
+header.coffee {
+    background-color: #ae5e13;
+    color: #faf2c0;
+    padding: 10px;
+    border-radius: 5px;
+    a {
+        color: #faf2c0;
+    }
+}
+
 h1 {
     text-align: center;
+}
+
+body.coffee {
+    background-color: #f0f0f0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+div.coffee_header {
+    justify-content: center;
+    background-color: #42271b;
+    color: #faf2c0;
+    border-radius: 5px;
+    padding: 15px;   
+}
+
+img.coffee_masters_logo {
+    height: 30px;
+    padding-right: 3px;
+}
+
+h2.coffee_masters_header {
+    font-size: small;
+}
+
+.flex-container {
+    display: flex;
+    width: 100%;
+}
+
+.ai-center {
+    align-items: center;
+}
+
+.jc-sa {
+    justify-content: space-around;
+}
+
+.top-nav-list {
+    list-style-type:none;
+}
+
+
+.example-group {
+    position: relative;
+    display: inline-block;
+  }
+
+.example-input {
+    border-color: #9c724d;
+    background-color: #ede0d4;
+    padding: 8px;
+    border-radius: 20px;
+}
+
+.input-label {
+    background-color: #ede0d4;
+    color: #9c724d;
+    font-size: 11px;
+    position: absolute;
+    left: 25px;
+    top: -7px;
+    padding: 0 2px;
+}
+
+.window {
+    background-color: #ede0d4;
+    border-radius: 5px;
+    padding: 20px;
+    color: #9c724d;
+    h2 {
+        font-size: small;
+        font-weight: lighter;
+    }
+}
+
+.item {
+    color: black;
+    list-style-type:none;
+    .add-on {
+        color: #9c724d;
+        list-style-type:none;
+    }
+}
+
+
+
+button {
+    background-color: #ddb992;
+    border-radius: 50px;
+    padding: 10px;
+    width: 100%;
 }
