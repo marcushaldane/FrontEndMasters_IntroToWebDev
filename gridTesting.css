@@ -6,7 +6,7 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-header {
+header.nav {
     text-align: center;
     background-color: #ae5e13;
     color: #faf2c0;
@@ -25,3 +25,40 @@ header {
     display: flex;
     width: 100%;
 }
+
+.my-page-header {
+    grid-area: nav-header;
+    background-color: red;
+    height: fit-content;
+    padding: 10px;
+}
+
+.my-page-body {
+    grid-area: main-body;
+    background-color: blue;
+    height: 600px;
+    padding: 10px;
+}
+
+.my-page-sidebar {
+    grid-area: nav-side;
+    background-color: green;
+    padding: 10px;
+}
+
+.my-page-footer {
+    grid-area: footer;
+    background-color: yellow;
+    height: 100px;
+    padding: 10px;
+}
+
+.my-page {
+    display: grid;
+    grid-template-columns: 10fr 1fr 4fr;
+    grid-template-areas:
+        "nav-header  nav-header  nav-side"
+        "main-body   .           nav-side"
+        "footer      footer      footer";
+}
+
