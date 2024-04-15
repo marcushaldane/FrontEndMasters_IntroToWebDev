@@ -26,67 +26,70 @@
     </header>
     
     <div class="coffee_header flex-container ai-center">
-        <img class="coffee_masters_logo" src="https://btholt.github.io/complete-intro-to-web-dev-v3/images/coffee_masters_logo.png" alt="Coffee Masters Logo">
+        <img class="coffee_masters_logo" src="./coffee_masters_logo.png" alt="Coffee Masters Logo">
         <h2 class="coffee_masters_header">Coffee Masters</h2>
     </div>
+    <div class="grid">
+        <div class="window grid-items">
+            <h2>Items</h2>
+            <ul>
+                <li class="item"> Cappuccino  $3.35
+                    <ul>
+                        <li class="add-on">Lite Foam</li>
+                    </ul>
+                </li>
+                <li class="item"> Cappuccino  $3.85
+                    <ul>
+                        <li class="add-on">Lite Milk</li>
+                        <li class="add-on">Double Espresso</li>
+                    </ul>
+                </li>
+                <li class="item"> Croissant  $2.45
+                    <ul>
+                        <li class="add-on">Butter</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="window grid-name">
+            <h2>Name</h2>
+            <div class="example-group">
+                <label for="example" class="input-label">Name For Order</label>
+                <input id="example" class="example-input" placeholder="Name"/>
+            </div>
+        </div>
+        <div class="window grid-payment">
+            <h2>Payment</h2>
+            <div class="example-group">
+                <label for="example" class="input-label">Card Number</label>
+                <input id="example" class="example-input" placeholder="0000 0000 0000 0000"/>
+            </div>
+            <div class="example-group">
+                <label for="example" class="input-label">CCV Number</label>
+                <input id="example" class="example-input" placeholder="000"/>
+            </div>
+        </div>
+    </div>
+    <section class="costs">
+        <table>
+            <tr>
+                <td>Subtotal:</td>
+                <td>$9.65</td>
+            </tr>
+            <tr>
+                <td>Tax:</td>
+                <td>$0.82</td>
+            </tr>
+            <tr>
+                <td>Total:</td>
+                <td>$10.47</td>
+            </tr>
+        </table>
+    </section>
 
-    <div class="window">
-        <h2>Items</h2>
-        <ul>
-            <li class="item"> Cappuccino  $3.35
-                <ul>
-                    <li class="add-on">Lite Foam</li>
-                </ul>
-            </li>
-            <li class="item"> Cappuccino  $3.85
-                <ul>
-                    <li class="add-on">Lite Milk</li>
-                    <li class="add-on">Double Espresso</li>
-                </ul>
-            </li>
-            <li class="item"> Croissant  $2.45
-                <ul>
-                    <li class="add-on">Butter</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-    
-    <div class="window">
-        <h2>Name</h2>
-        <div class="example-group">
-            <label for="example" class="input-label">Name For Order</label>
-            <input id="example" class="example-input" placeholder="Name"/>
-        </div>
-    </div>
 
-    <div class="window">
-        <h2>Payment</h2>
-        <div class="example-group">
-            <label for="example" class="input-label">Card Number</label>
-            <input id="example" class="example-input" placeholder="0000 0000 0000 0000"/>
-        </div>
-        <div class="example-group">
-            <label for="example" class="input-label">CCV Number</label>
-            <input id="example" class="example-input" placeholder="000"/>
-        </div>
-    </div>
-    
-    <div>
-        <div class="Subtotal flex-container jc-sa">
-            <p>Subtotal:</p>
-            <p>$9.65</p>
-        </div>
-        <div class="Tax flex-container jc-sa">
-            <p>Tax:</p>
-            <p>$0.82</p>
-        </div>
-        <div class="Total flex-container jc-sa">
-            <p>Total:</p>
-            <p>$10.47</p>
-        </div>
-    </div>
-
+    <br>
     <button>Place Order</button>
 </body>
 </html>

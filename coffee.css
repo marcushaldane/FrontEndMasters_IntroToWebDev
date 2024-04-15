@@ -43,6 +43,12 @@ h2.coffee_masters_header {
     width: 100%;
 }
 
+.column {
+    flex-direction: column;
+    width: 75%;
+    padding: 30px;
+}
+
 .ai-center {
     align-items: center;
 }
@@ -98,7 +104,46 @@ h2.coffee_masters_header {
     }
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 10px;
+    grid-template-areas: 
+    "items name"
+    "items payment"
+    "items payment";
+    row-gap: 30px;
+    column-gap: 20px;
+}
 
+.grid-items {
+    grid-area: items;
+}
+
+.grid-name {
+    grid-area: name;
+}
+
+.grid-payment {
+    grid-area: payment;
+}
+
+.costs {
+    width: fit-content; 
+}
+
+.left-text {
+    text-align: left;
+}
+
+.right-text {
+    text-align: right;
+}
+
+td {
+    text-align: center;
+    vertical-align: middle;
+}
 
 button {
     background-color: #ddb992;
