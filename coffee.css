@@ -129,15 +129,17 @@ h2.coffee_masters_header {
 }
 
 .costs {
-    width: fit-content; 
+    /*width: fit-content;*/
+    width: 100%;
+    background-color: blue;
 }
 
-.left-text {
-    text-align: left;
-}
-
-.right-text {
-    text-align: right;
+table {
+    display: flex;
+    .center {
+        margin-left:auto; 
+        margin-right:auto;
+    }
 }
 
 td {

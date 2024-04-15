@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    text-align: center;
+    background-color: #ae5e13;
+    color: #faf2c0;
+    padding: 10px;
+    border-radius: 5px;
+    a {
+        color: #faf2c0;
+    }
+    ul {
+        list-style-type:none;
+        justify-content: space-around;
+    }
+}
+
+.flex-container {
+    display: flex;
+    width: 100%;
+}
