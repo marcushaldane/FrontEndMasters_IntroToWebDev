@@ -53,7 +53,6 @@ body {
 }
 .my-page-items {
     grid-area: items-body;
-    /*background-color: #ede0d4;*/
     height: fit-content;
     padding: 10px;
     border-radius: 10px;
@@ -83,7 +82,7 @@ p {
     display: grid;
     grid-template-columns: 1fr 1fr 4fr 1fr;
     /*border-bottom: 1px solid #DDB892;*/
-    padding: 15px;
+    padding: 10px;
     grid-template-areas:
         "quantity   item-name       . .   item-cost"
         ".          item-modifier   item-modifier item-modifier   . ";
@@ -114,7 +113,7 @@ hr.solid {
     background-color: #ede0d4;
     border-radius: 5px;
     padding: 10px;
-    /*color: #9c724d;*/
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 .input-label {
     background-color: #ede0d4;
