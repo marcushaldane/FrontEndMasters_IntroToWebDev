@@ -4,6 +4,7 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
+    /*font-family: 'Times New Roman', Times, serif;*/
 }
 
 header.nav {
@@ -53,12 +54,83 @@ header.nav {
     padding: 10px;
 }
 
-.my-page {
-    display: grid;
-    grid-template-columns: 10fr 1fr 4fr;
-    grid-template-areas:
-        "nav-header  nav-header  nav-side"
-        "main-body   .           nav-side"
-        "footer      footer      footer";
+
+.my-page-items {
+    grid-area: items-body;
+    background-color: blue;
+    height: 400px;
+    padding: 10px;
 }
 
+.my-page-name {
+    grid-area: name-body;
+    background-color: orange;
+    padding: 10px;
+}
+
+.my-page-payment {
+    grid-area: payment-body;
+    background-color: teal;
+    padding: 10px;
+}
+
+.my-page-total {
+    grid-area: total;
+    background-color: green;
+    padding: 10px;
+}
+
+.my-page-place-order {
+    grid-area: place-order;
+    background-color: aqua;
+    padding: 10px;
+}
+
+.my-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "nav-header  nav-header   "
+        "items-body  name-body    "
+        "items-body  payment-body "
+        "total       total        "
+        "place-order place-order  ";
+}
+
+.center-text {
+    text-align: center;
+}
+
+.align-center {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: blue;
+}
+
+.width-third {
+    width: 30%;
+}
+
+.coffee_masters_logo {
+    height: 30px;
+    padding-right: 3px;
+}
+
+.coffee_masters_header {
+    font-size: small;
+}
+
+.dollar-amount {
+    text-align: right;
+}
+
+.total {
+    font-weight: bold;
+}
+
+.large-bottom-button {
+    background-color: #ddb992;
+    border-radius: 50px;
+    padding: 10px;
+    width: 100%;
+}
