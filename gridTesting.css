@@ -40,7 +40,6 @@ body {
 }
 .my-page-labels {
     margin: 0px 15px;
-    
     text-transform: uppercase;
     font-size: large;
     font-weight: 100;
@@ -54,29 +53,25 @@ body {
 }
 .my-page-items {
     grid-area: items-body;
-    background-color: #ede0d4;
+    /*background-color: #ede0d4;*/
     height: fit-content;
-    padding: 5px;
+    padding: 10px;
     border-radius: 10px;
 }
 .my-page-name {
     grid-area: name-body;
-    background-color: orange;
     padding: 10px;
 }
 .my-page-payment {
     grid-area: payment-body;
-    background-color: teal;
     padding: 10px;
 }
 .my-page-total {
     grid-area: total;
-    /*background-color: green;*/
     padding: 10px;
 }
 .my-page-place-order {
     grid-area: place-order;
-    /*background-color: aqua;*/
     padding: 10px;
 }
 
@@ -115,6 +110,32 @@ hr.solid {
     border-left: #DDB892;
 }
 
+.window {
+    background-color: #ede0d4;
+    border-radius: 5px;
+    padding: 10px;
+    /*color: #9c724d;*/
+}
+.input-label {
+    background-color: #ede0d4;
+    color: #9c724d;
+    font-size: 11px;
+    position: absolute;
+    left: 25px;
+    top: -7px;
+    padding: 0 2px;
+}
+.input-group {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+.input-box {
+    border-color: #9c724d;
+    background-color: #ede0d4;
+    padding: 8px;
+    border-radius: 20px;
+}
 
 .jc-sa {
     justify-content: space-around;
@@ -152,6 +173,18 @@ hr.solid {
 
 .width-fifth {
     width: 20%;
+}
+.width-half {
+    width: 50%;
+}
+.width-full {
+    width: 100%;
+}
+.max-width-450 {
+    max-width: 450px;
+}
+.max-width-300 {
+    max-width: 300px;
 }
 
 .dollar-amount {

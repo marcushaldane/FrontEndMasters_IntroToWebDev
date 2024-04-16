@@ -38,14 +38,8 @@
             <h2 class="coffee_masters_header">Coffee Masters</h2>
         </header>
 
-
-
-
-
-
-
-        <div class="my-page-items">
-            <div>
+        <section class="my-page-items">
+            <div class="window">
                 <h2 class="dark-coffee-text my-page-labels">Items</h2>
                 <ul class="hide-list-bullets">
                     <li>
@@ -79,26 +73,35 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </section>
         
-        <div class="my-page-name">Name</div>
+        <section class="my-page-name">
+            <div class="window">
+                <h2 class="dark-coffee-text my-page-labels">Name</h2>
+                <br>
+                <div class="input-group width-full">
+                    <label for="name-input" class="input-label">Name For Order</label>
+                    <input id="name-input" class="input-box width-full max-width-450" placeholder="Name"/>
+                </div>
+            </div>
+        </section>
         
-        <div class="my-page-payment">Payment</div>
-        
+        <section class="my-page-payment">
+            <div class="window">
+                <h2 class="dark-coffee-text my-page-labels">Payment</h2>
+                <br>
+                <div class="input-group width-full">
+                    <label for="CC-input" class="input-label">Card Number</label>
+                    <input id="CC-input" class="input-box width-full max-width-300" placeholder="0000 0000 0000 0000"/>
+                </div>
+                <div class="input-group width-half">
+                    <label for="CCV-input" class="input-label">CCV Number</label>
+                    <input id="CCV-input" class="input-box" placeholder="000"/>
+                </div>
+            </div>
+        </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-        <div class="my-page-total">
+        <section class="my-page-total">
             <table class="align-center width-fifth">
                 <tr>
                     <td class="cost-label">Subtotal:</td>
@@ -113,11 +116,11 @@
                     <td class="dollar-amount total">$10.47</td>
                 </tr>
             </table>
-        </div>
+        </section>
 
-        <div class="my-page-place-order center-text">
+        <section class="my-page-place-order center-text">
             <button class="large-bottom-button">Place Order</button>
-        </div>
+        </section>
 
     </div>
 </body>
