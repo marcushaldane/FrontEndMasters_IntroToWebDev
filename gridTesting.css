@@ -4,8 +4,12 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
+    background-color: #f0f0f0;
 }
-
+.flex-container {
+    display: flex;
+    width: 100%;
+}
 .nav {
     text-align: center;
     background-color: #ae5e13;
@@ -13,48 +17,15 @@ body {
     border-radius: 5px;
 }
 
-.flex-container {
-    display: flex;
-    width: 100%;
+.coffee_masters_logo {
+    height: 30px;
+    padding-right: 3px;
+    
 }
 
-.my-page-header {
-    grid-area: nav-header;
-    background-color: #42271b;
-    height: fit-content;
-    border-radius: 5px;
-    padding: 15px;
-}
-
-.my-page-items {
-    grid-area: items-body;
-    background-color: blue;
-    height: 400px;
-    padding: 10px;
-}
-
-.my-page-name {
-    grid-area: name-body;
-    background-color: orange;
-    padding: 10px;
-}
-
-.my-page-payment {
-    grid-area: payment-body;
-    background-color: teal;
-    padding: 10px;
-}
-
-.my-page-total {
-    grid-area: total;
-    background-color: green;
-    padding: 10px;
-}
-
-.my-page-place-order {
-    grid-area: place-order;
-    background-color: aqua;
-    padding: 10px;
+.coffee_masters_header {
+    font-size: small;
+    color: #faf2c0;
 }
 
 .my-page {
@@ -67,15 +38,99 @@ body {
         "total       total        "
         "place-order place-order  ";
 }
+.my-page-labels {
+    margin: 0px 15px;
+    
+    text-transform: uppercase;
+    font-size: large;
+    font-weight: 100;
+}
+.my-page-header {
+    grid-area: nav-header;
+    background-color: #42271b;
+    height: fit-content;
+    border-radius: 5px;
+    padding: 15px;
+}
+.my-page-items {
+    grid-area: items-body;
+    background-color: #ede0d4;
+    height: fit-content;
+    padding: 5px;
+    border-radius: 10px;
+}
+.my-page-name {
+    grid-area: name-body;
+    background-color: orange;
+    padding: 10px;
+}
+.my-page-payment {
+    grid-area: payment-body;
+    background-color: teal;
+    padding: 10px;
+}
+.my-page-total {
+    grid-area: total;
+    /*background-color: green;*/
+    padding: 10px;
+}
+.my-page-place-order {
+    grid-area: place-order;
+    /*background-color: aqua;*/
+    padding: 10px;
+}
+
+p {
+    margin: 0;
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 4fr 1fr;
+    /*border-bottom: 1px solid #DDB892;*/
+    padding: 15px;
+    grid-template-areas:
+        "quantity   item-name       . .   item-cost"
+        ".          item-modifier   item-modifier item-modifier   . ";
+}
+.item-grid-quantity {
+    grid-area: quantity;
+}
+.item-grid-item-name {
+    grid-area: item-name;
+    font-weight: bold;
+}
+.item-grid-item-cost {
+    grid-area: item-cost;
+    font-weight: bold;
+}
+.item-grid-item-modifier {
+    grid-area: item-modifier;
+    color: #9c724d;
+    font-size: small;
+}
+hr.solid {
+    border-top: 1px solid #DDB892;
+    border-bottom: #DDB892;
+    border-left: #DDB892;
+}
+
+
+.jc-sa {
+    justify-content: space-around;
+}
 
 .hide-list-bullets {
     list-style-type:none;
-    justify-content: space-around;
     padding: 0;
 }
 
 .coffee-text {
     color: #faf2c0;
+}
+
+.dark-coffee-text {
+    color: #9c724d;
 }
 
 .black-text {
@@ -97,17 +152,6 @@ body {
 
 .width-fifth {
     width: 20%;
-}
-
-.coffee_masters_logo {
-    height: 30px;
-    padding-right: 3px;
-    
-}
-
-.coffee_masters_header {
-    font-size: small;
-    color: #faf2c0;
 }
 
 .dollar-amount {
