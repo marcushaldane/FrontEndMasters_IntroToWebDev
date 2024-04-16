@@ -3,98 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./coffee.css" rel="stylesheet"/>
+    <link href="./gridTesting.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"/>
-    <title>Coffee Masters Checkout</title>
+    <title>Grid Testing Page</title>
 </head>
-<body class="coffee">
-    <header class="coffee">
-        <h1>Coffee Masters Checkout Page</h1>
+<body>
+    <header class="nav">
+        <h1 class="coffee-text">Grid Testing Page</h1>
         <nav class="top-nav">
-            <ul class="top-nav-list flex-container jc-sa">
+            <ul class="top-nav-list flex-container hide-list-bullets jc-sa">
                 <li class="top-nav-list-item">
-                    <a href="./index.html">Home Page</a>
+                    <a class="coffee-text" href="./index.html">Home Page</a>
                 </li>
                 <li class="top-nav-list-item">
-                    <a href="./about.html">About Page</a>
+                    <a class="coffee-text" href="./about.html">About Page</a>
                 </li>
                 <li  class="top-nav-list-item">
-                    <a href="./coffee.html">Coffee Masters Checkout Page</a>
+                    <a class="coffee-text" href="./coffee.html">Coffee Masters Checkout Page</a>
                 </li>
                 <li  class="top-nav-list-item"> 
-                    <a href="./flexTesting.html">Flex Testing Page</a> 
+                    <a class="coffee-text" href="./flexTesting.html">Flex Testing Page</a> 
                 </li>
                 <li  class="top-nav-list-item">
-                    <a href="./gridTesting.html">Grid Testing Page</a>
+                    <a class="coffee-text" href="./gridTesting.html">Grid Testing Page</a>
                 </li>
             </ul>
         </nav>
     </header>
-    
-    <div class="coffee_header flex-container ai-center">
-        <img class="coffee_masters_logo" src="./coffee_masters_logo.png" alt="Coffee Masters Logo">
-        <h2 class="coffee_masters_header">Coffee Masters</h2>
-    </div>
-    <div class="grid">
-        <div class="window grid-items">
-            <h2>Items</h2>
-            <ul>
-                <li class="item"> Cappuccino  $3.35
-                    <ul>
-                        <li class="add-on">Lite Foam</li>
-                    </ul>
-                </li>
-                <li class="item"> Cappuccino  $3.85
-                    <ul>
-                        <li class="add-on">Lite Milk</li>
-                        <li class="add-on">Double Espresso</li>
-                    </ul>
-                </li>
-                <li class="item"> Croissant  $2.45
-                    <ul>
-                        <li class="add-on">Butter</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        
-        <div class="window grid-name">
-            <h2>Name</h2>
-            <div class="example-group">
-                <label for="example" class="input-label">Name For Order</label>
-                <input id="example" class="example-input" placeholder="Name"/>
-            </div>
-        </div>
-        <div class="window grid-payment">
-            <h2>Payment</h2>
-            <div class="example-group">
-                <label for="example" class="input-label">Card Number</label>
-                <input id="example" class="example-input" placeholder="0000 0000 0000 0000"/>
-            </div>
-            <div class="example-group">
-                <label for="example" class="input-label">CCV Number</label>
-                <input id="example" class="example-input" placeholder="000"/>
-            </div>
-        </div>
-    </div>
-    <section class="costs">
-        <table class="center">
-            <tr>
-                <td>Subtotal:</td>
-                <td>$9.65</td>
-            </tr>
-            <tr>
-                <td>Tax:</td>
-                <td>$0.82</td>
-            </tr>
-            <tr>
-                <td>Total:</td>
-                <td>$10.47</td>
-            </tr>
-        </table>
-    </section>
 
     <br>
-    <button>Place Order</button>
+    <div class="my-page">
+        <header class="my-page-header flex-container center-content">
+            <img class="coffee_masters_logo" src="./coffee_masters_logo.png" alt="Coffee Masters Logo">
+            <h2 class="coffee_masters_header">Coffee Masters</h2>
+        </header>
+
+        <section class="my-page-items">
+            <div class="window">
+                <h2 class="dark-coffee-text my-page-labels">Items</h2>
+                <ul class="hide-list-bullets">
+                    <li>
+                        <div class="items-grid">
+                            <p class="item-grid-quantity">1x</p>
+                            <p class="item-grid-item-name">Cappuccino</p>
+                            <p class="item-grid-item-cost">$3.35</p>
+                            <p class="item-grid-item-modifier">Lite Foam</p>
+                        </div>
+                        <hr class="solid">
+                    </li>
+                    <li>
+                        <div class="items-grid">
+                            <p class="item-grid-quantity">1x</p>
+                            <p class="item-grid-item-name">Cappuccino</p>
+                            <p class="item-grid-item-cost">$3.85</p>
+                            <div class="item-grid-item-modifier">
+                                <p class="">Lite Milk</p>
+                                <p class="">Double Espresso</p>
+                            </div>
+                        </div>
+                        <hr class="solid">
+                    </li>
+                    <li>
+                        <div class="items-grid">
+                            <p class="item-grid-quantity">1x</p>
+                            <p class="item-grid-item-name">Croissant</p>
+                            <p class="item-grid-item-cost">$2.45</p>
+                            <p class="item-grid-item-modifier">Butter</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="my-page-name">
+            <div class="window">
+                <h2 class="dark-coffee-text my-page-labels">Name</h2>
+                <br>
+                <div class="input-group width-full">
+                    <label for="name-input" class="input-label">Name For Order</label>
+                    <input id="name-input" class="input-box width-full max-width-450" placeholder="Name"/>
+                </div>
+            </div>
+        </section>
+        
+        <section class="my-page-payment">
+            <div class="window">
+                <h2 class="dark-coffee-text my-page-labels">Payment</h2>
+                <br>
+                <div class="input-group width-full">
+                    <label for="CC-input" class="input-label">Card Number</label>
+                    <input id="CC-input" class="input-box width-full max-width-300" placeholder="0000 0000 0000 0000"/>
+                </div>
+                <div class="input-group width-half">
+                    <label for="CCV-input" class="input-label">CCV Number</label>
+                    <input id="CCV-input" class="input-box" placeholder="000"/>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-page-total">
+            <table class="align-center width-fifth">
+                <tr>
+                    <td class="cost-label">Subtotal:</td>
+                    <td class="dollar-amount">$9.65</td>
+                </tr>
+                <tr>
+                    <td class="cost-label">Tax:</td>
+                    <td class="dollar-amount">$0.82</td>
+                </tr>
+                <tr>
+                    <td class="cost-label total">Total:</td>
+                    <td class="dollar-amount total">$10.47</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="my-page-place-order center-text">
+            <button class="large-bottom-button">Place Order</button>
+        </section>
+
+    </div>
 </body>
 </html>

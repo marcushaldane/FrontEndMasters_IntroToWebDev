@@ -2,78 +2,119 @@
     box-sizing: border-box;
 }
 
-header.coffee {
-    background-color: #ae5e13;
-    color: #faf2c0;
-    padding: 10px;
-    border-radius: 5px;
-    a {
-        color: #faf2c0;
-    }
-}
-
-h1 {
-    text-align: center;
-}
-
-body.coffee {
-    background-color: #f0f0f0;
+body {
     font-family: 'Open Sans', sans-serif;
+    background-color: #f0f0f0;
 }
-
-div.coffee_header {
-    justify-content: center;
-    background-color: #42271b;
-    color: #faf2c0;
-    border-radius: 5px;
-    padding: 15px;   
-}
-
-img.coffee_masters_logo {
-    height: 30px;
-    padding-right: 3px;
-}
-
-h2.coffee_masters_header {
-    font-size: small;
-}
-
 .flex-container {
     display: flex;
     width: 100%;
 }
-
-.column {
-    flex-direction: column;
-    width: 75%;
-    padding: 30px;
+.nav {
+    text-align: center;
+    background-color: #ae5e13;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-.ai-center {
-    align-items: center;
+.coffee_masters_logo {
+    height: 30px;
+    padding-right: 3px;
+    
 }
 
-.jc-sa {
-    justify-content: space-around;
+.coffee_masters_header {
+    font-size: small;
+    color: #faf2c0;
 }
 
-.top-nav-list {
-    list-style-type:none;
+.my-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "nav-header  nav-header   "
+        "items-body  name-body    "
+        "items-body  payment-body "
+        "total       total        "
+        "place-order place-order  ";
+}
+.my-page-labels {
+    margin: 0px 15px;
+    text-transform: uppercase;
+    font-size: large;
+    font-weight: 100;
+}
+.my-page-header {
+    grid-area: nav-header;
+    background-color: #42271b;
+    height: fit-content;
+    border-radius: 5px;
+    padding: 15px;
+}
+.my-page-items {
+    grid-area: items-body;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+}
+.my-page-name {
+    grid-area: name-body;
+    padding: 10px;
+}
+.my-page-payment {
+    grid-area: payment-body;
+    padding: 10px;
+}
+.my-page-total {
+    grid-area: total;
+    padding: 10px;
+}
+.my-page-place-order {
+    grid-area: place-order;
+    padding: 10px;
 }
 
+p {
+    margin: 0;
+}
 
-.example-group {
-    position: relative;
-    display: inline-block;
-  }
+.items-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 4fr 1fr;
+    /*border-bottom: 1px solid #DDB892;*/
+    padding: 10px;
+    grid-template-areas:
+        "quantity   item-name       . .   item-cost"
+        ".          item-modifier   item-modifier item-modifier   . ";
+}
+.item-grid-quantity {
+    grid-area: quantity;
+}
+.item-grid-item-name {
+    grid-area: item-name;
+    font-weight: bold;
+}
+.item-grid-item-cost {
+    grid-area: item-cost;
+    font-weight: bold;
+}
+.item-grid-item-modifier {
+    grid-area: item-modifier;
+    color: #9c724d;
+    font-size: small;
+}
+hr.solid {
+    border-top: 1px solid #DDB892;
+    border-bottom: #DDB892;
+    border-left: #DDB892;
+}
 
-.example-input {
-    border-color: #9c724d;
+.window {
     background-color: #ede0d4;
-    padding: 8px;
-    border-radius: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
-
 .input-label {
     background-color: #ede0d4;
     color: #9c724d;
@@ -83,71 +124,77 @@ h2.coffee_masters_header {
     top: -7px;
     padding: 0 2px;
 }
-
-.window {
+.input-group {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+.input-box {
+    border-color: #9c724d;
     background-color: #ede0d4;
-    border-radius: 5px;
-    padding: 20px;
-    color: #9c724d;
-    h2 {
-        font-size: small;
-        font-weight: lighter;
-    }
+    padding: 8px;
+    border-radius: 20px;
 }
 
-.item {
-    color: black;
+.jc-sa {
+    justify-content: space-around;
+}
+
+.hide-list-bullets {
     list-style-type:none;
-    .add-on {
-        color: #9c724d;
-        list-style-type:none;
-    }
+    padding: 0;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 10px;
-    grid-template-areas: 
-    "items name"
-    "items payment"
-    "items payment";
-    row-gap: 30px;
-    column-gap: 20px;
+.coffee-text {
+    color: #faf2c0;
 }
 
-.grid-items {
-    grid-area: items;
+.dark-coffee-text {
+    color: #9c724d;
 }
 
-.grid-name {
-    grid-area: name;
+.black-text {
+    color: black;
 }
 
-.grid-payment {
-    grid-area: payment;
-}
-
-.costs {
-    /*width: fit-content;*/
-    width: 100%;
-    background-color: blue;
-}
-
-table {
-    display: flex;
-    .center {
-        margin-left:auto; 
-        margin-right:auto;
-    }
-}
-
-td {
+.center-text {
     text-align: center;
-    vertical-align: middle;
 }
 
-button {
+.center-content {
+    justify-content: center;
+}
+
+.align-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.width-fifth {
+    width: 20%;
+}
+.width-half {
+    width: 50%;
+}
+.width-full {
+    width: 100%;
+}
+.max-width-450 {
+    max-width: 450px;
+}
+.max-width-300 {
+    max-width: 300px;
+}
+
+.dollar-amount {
+    text-align: right;
+}
+
+.total {
+    font-weight: bold;
+}
+
+.large-bottom-button {
     background-color: #ddb992;
     border-radius: 50px;
     padding: 10px;
