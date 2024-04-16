@@ -4,22 +4,13 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    /*font-family: 'Times New Roman', Times, serif;*/
 }
 
-header.nav {
+.nav {
     text-align: center;
     background-color: #ae5e13;
-    color: #faf2c0;
     padding: 10px;
     border-radius: 5px;
-    a {
-        color: #faf2c0;
-    }
-    ul {
-        list-style-type:none;
-        justify-content: space-around;
-    }
 }
 
 .flex-container {
@@ -29,31 +20,11 @@ header.nav {
 
 .my-page-header {
     grid-area: nav-header;
-    background-color: red;
+    background-color: #42271b;
     height: fit-content;
-    padding: 10px;
+    border-radius: 5px;
+    padding: 15px;
 }
-
-.my-page-body {
-    grid-area: main-body;
-    background-color: blue;
-    height: 600px;
-    padding: 10px;
-}
-
-.my-page-sidebar {
-    grid-area: nav-side;
-    background-color: green;
-    padding: 10px;
-}
-
-.my-page-footer {
-    grid-area: footer;
-    background-color: yellow;
-    height: 100px;
-    padding: 10px;
-}
-
 
 .my-page-items {
     grid-area: items-body;
@@ -97,27 +68,46 @@ header.nav {
         "place-order place-order  ";
 }
 
+.hide-list-bullets {
+    list-style-type:none;
+    justify-content: space-around;
+    padding: 0;
+}
+
+.coffee-text {
+    color: #faf2c0;
+}
+
+.black-text {
+    color: black;
+}
+
 .center-text {
     text-align: center;
+}
+
+.center-content {
+    justify-content: center;
 }
 
 .align-center {
     margin-left: auto;
     margin-right: auto;
-    background-color: blue;
 }
 
-.width-third {
-    width: 30%;
+.width-fifth {
+    width: 20%;
 }
 
 .coffee_masters_logo {
     height: 30px;
     padding-right: 3px;
+    
 }
 
 .coffee_masters_header {
     font-size: small;
+    color: #faf2c0;
 }
 
 .dollar-amount {
