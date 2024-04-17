@@ -38,6 +38,7 @@ body {
 .my-calc {
     display: grid;
     text-align: center;
+    font-size: xx-large;
     width: 500px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas:
@@ -47,13 +48,17 @@ body {
         "four   five   six    subtraction     "
         "one    two    three  addition        "
         "zer0   zer0   zer0   equals          ";
-    button {
+    button, .calc-result {
         border: 1px solid black;
         height: 125px;
+        font-family: inherit;
+        font-size: inherit;
+        margin: 0;
     }
 }
 .calc-result {
-    grid-area: result;
+    grid-area: result;  
+    line-height: 125px; 
 }
 .calc-clear {
     grid-area: clear;
