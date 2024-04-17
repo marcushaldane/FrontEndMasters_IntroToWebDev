@@ -38,7 +38,7 @@ body {
 .my-calc {
     display: grid;
     text-align: center;
-    font-size: xx-large;
+    font-size: 48pt;
     width: 500px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas:
@@ -56,9 +56,16 @@ body {
         margin: 0;
     }
 }
+.math-op {
+    background-color: orange;
+    color: white;
+}
 .calc-result {
     grid-area: result;  
     line-height: 125px; 
+    background-color: black;
+    color: white;
+    text-align: right;
 }
 .calc-clear {
     grid-area: clear;
