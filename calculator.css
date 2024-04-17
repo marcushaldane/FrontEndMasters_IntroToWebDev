@@ -6,6 +6,10 @@ body {
     font-family:'Courier New', Courier, monospace;
 }
 
+.page-title {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 .nav {
     text-align: center;
     background-color: black;
@@ -19,7 +23,7 @@ body {
 
 .flex-container {
     display: flex;
-    width: 100%;
+    justify-content: center;
 }
 
 .hide-list-bullets {
@@ -31,12 +35,74 @@ body {
     justify-content: space-around;
 }
 
-.my-page {
+.my-calc {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    width: 500px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas:
-        "nav-header  nav-header   ";
+        "result result result result          "
+        "clear  clear  back   division        "
+        "seven  eight  nine   multiplication  "
+        "four   five   six    subtraction     "
+        "one    two    three  addition        "
+        "zer0   zer0   zer0   equals          ";
+    button {
+        border: 1px solid black;
+        height: 125px;
+    }
 }
-.my-page-header {
-    grid-area: nav-header;
+.calc-result {
+    grid-area: result;
+}
+.calc-clear {
+    grid-area: clear;
+}
+.calc-back {
+    grid-area: back;
+}
+.calc-divide {
+    grid-area: division;
+}
+.calc-multiply {
+    grid-area: multiplication;
+}
+.calc-subtract {
+    grid-area: subtraction;
+}
+.calc-add {
+    grid-area: addition;
+}
+.calc-equals {
+    grid-area: equals;
+}
+.calc-9 {
+    grid-area: nine;
+}
+.calc-8 {
+    grid-area: eight;
+}
+.calc-7 {
+    grid-area: seven;
+}
+.calc-6 {
+    grid-area: six;
+}
+.calc-5 {
+    grid-area: five;
+}
+.calc-4 {
+    grid-area: four;
+}
+.calc-3 {
+    grid-area: three;
+}
+.calc-2 {
+    grid-area: two;
+}
+.calc-1 {
+    grid-area: one;
+}
+.calc-0 {
+    grid-area: zer0;
 }
