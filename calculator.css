@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Courier New', Courier, monospace;
+}
+
+.nav {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    a {
+        color: white;
+    }
+}
+
+.flex-container {
+    display: flex;
+    width: 100%;
+}
+
+.hide-list-bullets {
+    list-style-type:none;
+    padding: 0;
+}
+
+.jc-sa {
+    justify-content: space-around;
+}
+
+.my-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "nav-header  nav-header   ";
+}
+.my-page-header {
+    grid-area: nav-header;
+}
