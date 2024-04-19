@@ -3,7 +3,7 @@ let userInputString = ``;
 
 // querySelecter targets `my-calc` div which contains all buttons of the calculator and the result bar on top
 // addEventListener waits for a click on one of the buttons in the `my-calc` div and handles userInput function calls
-document.querySelector(`.my-calc`).addEventListener(`click`, function() {
+document.querySelector(`.my-calc`).addEventListener(`click`, function(event) {
     constructUserInputString(event.target.innerText, event.target.classList);
 }); 
 

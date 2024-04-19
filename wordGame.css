@@ -22,7 +22,8 @@ body {
 
 .flex-container {
     display: flex;
-    justify-content: center;
+    flex-direction: row; 
+    align-items: center;
 }
 
 .hide-list-bullets {
@@ -32,6 +33,18 @@ body {
 
 .jc-sa {
     justify-content: space-around;
+}
+
+.input-area {
+    /* height: 100px; */
+    justify-content: center;
+}
+.input-box {
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    caret-color: transparent;
+    /* outline: none; */
 }
 
 .white-box {
