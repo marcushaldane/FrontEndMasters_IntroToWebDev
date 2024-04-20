@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./wordGame.css" rel="stylesheet"/>
-    <link href="./personal_favicon_v1.png" rel="icon" type="image/x-icon"/>
+    <link href="./wordGame.css" rel="stylesheet"></div>
+    <link href="./personal_favicon_v1.png" rel="icon" type="image/x-icon"></div>
     <title>Word Game</title>
 </head>
 <body>
@@ -12,41 +12,60 @@
         <h1 class="page-title">Word Game Page</h1>
         <nav>
             <ul class="flex-container hide-list-bullets jc-sa">
-                <li>
-                    <a class="white-box" href="./index.html">Home Page</a>
-                </li>
-                <li>
-                    <a class="yellow-box" href="./about.html">About Page</a>
-                </li>
-                <li>
-                    <a class="green-box" href="./coffee.html">Coffee Masters Checkout Page</a>
-                </li>
-                <li> 
-                    <a class="green-box" href="./flexTesting.html">Flex Testing Page</a> 
-                </li>
-                <li>
-                    <a class="yellow-box" href="./gridTesting.html">Grid Testing Page</a>
-                </li>
-                <li>
-                    <a class="white-box" href="./calculator.html">Calculator Page</a>
-                </li>
-                <li>
-                    <a class="green-box" href="./wordGame.html">Word Game Page</a>
-                </li>
+                <li><a class="white-box" href="./index.html">Home Page</a></li>
+                <li><a class="yellow-box" href="./about.html">About Page</a></li>
+                <li><a class="green-box" href="./coffee.html">Coffee Masters Checkout Page</a></li>
+                <li><a class="green-box" href="./flexTesting.html">Flex Testing Page</a></li>
+                <li><a class="yellow-box" href="./gridTesting.html">Grid Testing Page</a></li>
+                <li><a class="white-box" href="./calculator.html">Calculator Page</a></li>
+                <li><a class="green-box" href="./wordGame.html">Word Game Page</a></li>
             </ul>
         </nav>
     </header>
     <br>
 
-    <div class="flex-container jc-sa input-area" onkeydown="return /[a-zA-Z]/i.test(event.key)">
-        <input id="input-1" class="input-1 input-box" type="text" maxlength="1" size="5"/>
-        <input id="input-2" class="input-2 input-box" type="text" maxlength="1" size="5"/>
-        <input id="input-3" class="input-3 input-box" type="text" maxlength="1" size="5"/>
-        <input id="input-4" class="input-4 input-box" type="text" maxlength="1" size="5"/>
-        <input id="input-5" class="input-5 input-box" type="text" maxlength="1" size="5"/>
+    <div id="guess-1" class="flex-container input-area">
+        <div id="input-1" class="input-1 input-box"></div>
+        <div id="input-2" class="input-2 input-box"></div>
+        <div id="input-3" class="input-3 input-box"></div>
+        <div id="input-4" class="input-4 input-box"></div>
+        <div id="input-5" class="input-5 input-box"></div>
     </div>
-    <!-- <button class="my-btn">Move Focus</button> -->
-    
+    <div id="guess-2" class="flex-container input-area">
+        <div id="input-1" class="input-1 input-box"></div>
+        <div id="input-2" class="input-2 input-box"></div>
+        <div id="input-3" class="input-3 input-box"></div>
+        <div id="input-4" class="input-4 input-box"></div>
+        <div id="input-5" class="input-5 input-box"></div>
+    </div>
+    <div id="guess-3" class="flex-container input-area">
+        <div id="input-1" class="input-1 input-box"></div>
+        <div id="input-2" class="input-2 input-box"></div>
+        <div id="input-3" class="input-3 input-box"></div>
+        <div id="input-4" class="input-4 input-box"></div>
+        <div id="input-5" class="input-5 input-box"></div>
+    </div>
+    <div id="guess-4" class="flex-container input-area">
+        <div id="input-1" class="input-1 input-box"></div>
+        <div id="input-2" class="input-2 input-box"></div>
+        <div id="input-3" class="input-3 input-box"></div>
+        <div id="input-4" class="input-4 input-box"></div>
+        <div id="input-5" class="input-5 input-box"></div>
+    </div>
+    <div id="guess-5" class="flex-container input-area">
+        <div id="input-1" class="input-1 input-box"></div>
+        <div id="input-2" class="input-2 input-box"></div>
+        <div id="input-3" class="input-3 input-box"></div>
+        <div id="input-4" class="input-4 input-box"></div>
+        <div id="input-5" class="input-5 input-box"></div>
+    </div>
+    <div id="guess-6" class="flex-container input-area">
+        <div id="input-1" class="input-1 input-box"></div>
+        <div id="input-2" class="input-2 input-box"></div>
+        <div id="input-3" class="input-3 input-box"></div>
+        <div id="input-4" class="input-4 input-box"></div>
+        <div id="input-5" class="input-5 input-box"></div>
+    </div>
     
     <script src="./wordGame.js"></script>
 </body>

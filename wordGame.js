@@ -1,95 +1,81 @@
 function isLetter (keyStroke) {
     return /^[a-zA-Z]$/.test(keyStroke);
 }
-
 function isBackSpace (keyStroke) {
     if (keyStroke === "Backspace" || keyStroke === "Delete") { return true; }
     return false;
 }
-
 function isEnter (keyStroke) {
     if (keyStroke === "Enter") { return true; }
     return false;
 }
-
-function isEmpty () {
-    if (document.activeElement.value === ``) { return true; }
+function isEmpty (guessID, inputID) {
+    if (document.getElementById(guessID).getElementsByClassName(inputID)[0].innerHTML === ``) { return true; }
     return false;
 }
 
-function moveFocus (nextFocus) {
-    document.querySelector(nextFocus).focus();
+function changeInnerText (guessID, inputID, keyPress) { 
+    document.getElementById(guessID).getElementsByClassName(inputID)[0].innerHTML = keyPress;
 }
 
-function submitGuess () {
+function constructGuessString () {
+    console.log(`constructGuessString`);
+    let guessString = ``;
+    return guessString;
+}
+
+function validateSubmission () {
+    console.log(`validateSubmission`);
+}
+
+function submitGuess (userGuess) {
+    // validateSubmission(); 
     console.log(`submitGuess`);
-    return;
 }
 
-function getActiveFocusElementClassNum () {
-    let activeFocusElementClassNum = 
-        parseInt(document.activeElement.classList[0]
-        .substring(document.activeElement.classList[0].length-1,
-        document.activeElement.classList[0].length));
-    
-    console.log(`activeFocusElementClassNum: ${activeFocusElementClassNum}`);
-    return activeFocusElementClassNum;
+function loseState () {
+    alert(`you lose`);
 }
-
 
 function init () {
-    document.querySelector(`.input-1`).focus();
+    // document.querySelector(`.input-1`).focus();
+    let guessNum = 1;
+    let inputNum = 1;
 
-    document.querySelector(`.input-area`).addEventListener(`keydown`, (event) => {
-        let keyPress = event.key;
-        let activeFocusNum = getActiveFocusElementClassNum();
-        let nextFocusNum;
-        let moveFocusInput;
+    window.addEventListener(`keydown`, (e) => {
         
-        if (isBackSpace(keyPress)) {
-            if (activeFocusNum > 1) {
-                nextFocusNum = activeFocusNum - 1;
-                if (isEmpty()) { 
-                    moveFocusInput = `.input-` + nextFocusNum;
-                } else {
-                    moveFocusInput = `.input-` + activeFocusNum;
-                }
-            } else {
-                moveFocusInput = `.input-` + activeFocusNum;
-            }
-            console.log(`moveFocusInput: ${moveFocusInput}`);
-            moveFocus(moveFocusInput);
-        }
-    })
+        let keyPress = e.key;
+        // console.log(`e.key: ${keyPress}`);
+        let inputID = `input-` + inputNum;
+        // console.log(`inputID: ${inputID}`);
+        let guessID = `guess-` + guessNum;
+        // console.log(`guessID: ${guessID}`);
 
-    document.querySelector(`.input-area`).addEventListener(`keyup`, (event) => {
-        console.log(`=====================================`);
-        console.log(`document.activeElement.value: ${document.activeElement.value}`);
-        console.log(`isEmpty: ${isEmpty()}`);
-        console.log(`activeFocusNum: ${getActiveFocusElementClassNum()}`);
-        
-        let keyPress = event.key;
-        let activeFocusNum = getActiveFocusElementClassNum();
-        let nextFocusNum;
-        let moveFocusInput;
-        
-        if (isLetter(keyPress)) {
-            if (activeFocusNum < 5) {
-                nextFocusNum = activeFocusNum + 1;
-                moveFocusInput = `.input-` + nextFocusNum;
-                //console.log(`moveFocusInput: ${moveFocusInput}`);
-                moveFocus(moveFocusInput);
+        if (isLetter(keyPress) && isEmpty(guessID, inputID)) {
+            if (inputNum < 5) {
+                inputNum++;
             } 
-        } 
-        else if (isEnter(keyPress)) {
+            changeInnerText(guessID, inputID, keyPress);
+        } else if (isBackSpace(keyPress)) {
+            if (inputNum > 1 && isEmpty(guessID, inputID)) {
+                inputNum--;
+                inputID = `input-` + inputNum;
+            } 
+            changeInnerText(guessID, inputID, ``);
+        } else if (isEnter(keyPress)) {
+            
+            let userGuess = constructGuessString(guessID);
             // submit word
-            // move focus to next row
-            console.log(`pressed: ${keyPress}`);
-            submitGuess();
+            submitGuess(userGuess);
+            guessNum++; // move focus to next row
+            if (guessNum > 6) { 
+                loseState(); // TODO: finish loseState()
+                // TODO: add reset state
+            }
+            inputNum = 1;
+            // console.log(`guessNum: ${guessNum}`);
         }
+        
     })
 }
 init();
-
-
-
