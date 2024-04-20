@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./wordGame.css" rel="stylesheet"/>
+    <link href="./personal_favicon_v1.png" rel="icon" type="image/x-icon"/>
     <title>Word Game</title>
 </head>
 <body>
@@ -37,7 +38,7 @@
     </header>
     <br>
 
-    <div class="flex-container jc-sa input-area">
+    <div class="flex-container jc-sa input-area" onkeydown="return /[a-zA-Z]/i.test(event.key)">
         <input id="input-1" class="input-1 input-box" type="text" maxlength="1" size="5"/>
         <input id="input-2" class="input-2 input-box" type="text" maxlength="1" size="5"/>
         <input id="input-3" class="input-3 input-box" type="text" maxlength="1" size="5"/>

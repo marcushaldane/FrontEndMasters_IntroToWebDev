@@ -3,16 +3,17 @@ function isLetter (keyStroke) {
 }
 
 function isBackSpace (keyStroke) {
-    if (keyStroke === "Backspace" || keyStroke === "Delete") {
-        return true;
-    }
+    if (keyStroke === "Backspace" || keyStroke === "Delete") { return true; }
     return false;
 }
 
 function isEnter (keyStroke) {
-    if (keyStroke === "Enter") {
-        return true;
-    }
+    if (keyStroke === "Enter") { return true; }
+    return false;
+}
+
+function isEmpty () {
+    if (document.activeElement.value === ``) { return true; }
     return false;
 }
 
@@ -35,22 +36,43 @@ function getActiveFocusElementClassNum () {
     return activeFocusElementClassNum;
 }
 
-function isEmpty () {
-    if (document.activeElement.innerHTML === ``) {
-        return true;
-    }
-    return false;
-}
 
 function init () {
     document.querySelector(`.input-1`).focus();
 
-    document.querySelector(`.input-area`).addEventListener(`keyup`, (event) => {
+    document.querySelector(`.input-area`).addEventListener(`keydown`, (event) => {
         let keyPress = event.key;
         let activeFocusNum = getActiveFocusElementClassNum();
-        console.log(`activeFocusNum: ${activeFocusNum}`);
         let nextFocusNum;
         let moveFocusInput;
+        
+        if (isBackSpace(keyPress)) {
+            if (activeFocusNum > 1) {
+                nextFocusNum = activeFocusNum - 1;
+                if (isEmpty()) { 
+                    moveFocusInput = `.input-` + nextFocusNum;
+                } else {
+                    moveFocusInput = `.input-` + activeFocusNum;
+                }
+            } else {
+                moveFocusInput = `.input-` + activeFocusNum;
+            }
+            console.log(`moveFocusInput: ${moveFocusInput}`);
+            moveFocus(moveFocusInput);
+        }
+    })
+
+    document.querySelector(`.input-area`).addEventListener(`keyup`, (event) => {
+        console.log(`=====================================`);
+        console.log(`document.activeElement.value: ${document.activeElement.value}`);
+        console.log(`isEmpty: ${isEmpty()}`);
+        console.log(`activeFocusNum: ${getActiveFocusElementClassNum()}`);
+        
+        let keyPress = event.key;
+        let activeFocusNum = getActiveFocusElementClassNum();
+        let nextFocusNum;
+        let moveFocusInput;
+        
         if (isLetter(keyPress)) {
             if (activeFocusNum < 5) {
                 nextFocusNum = activeFocusNum + 1;
@@ -58,23 +80,13 @@ function init () {
                 //console.log(`moveFocusInput: ${moveFocusInput}`);
                 moveFocus(moveFocusInput);
             } 
-        } else if (isBackSpace(keyPress)) {
-            if (activeFocusNum > 1) {
-                nextFocusNum = activeFocusNum - 1;
-                moveFocusInput = `.input-` + nextFocusNum;
-                //console.log(`moveFocusInput: ${moveFocusInput}`);
-                if (isEmpty()) { 
-                    moveFocus(moveFocusInput);
-                }
-            }
-            //console.log(`pressed: ${keyPress}`);
-        } else if (isEnter(keyPress)) {
+        } 
+        else if (isEnter(keyPress)) {
             // submit word
             // move focus to next row
             console.log(`pressed: ${keyPress}`);
             submitGuess();
         }
-        
     })
 }
 init();
