@@ -29,27 +29,23 @@ function constructGuessString (guessID) {
     return guessString;
 }
 
-function validateSubmission () {
-    // console.log(`validateSubmission`);
-    return true;
-}
-
 function submitGuess (wotd, userGuess) {
     // console.log(`submitGuess: ${wotd}`);
     if(wotd === userGuess) { return true; }
     return false;
 }
 
-function loseState () {
-    console.log(`you lose`);
+function loseState (correctWord) {
+    console.log(`You lose! The word was ${correctWord}`);
 }
 
-function winState (guessID) {
+function winState (guessID, correctWord) {
     // console.log(`guessID: ${guessID}`);
     let boxes = document.getElementById(guessID).children;
     for(let i = 0; i < 5; i++) {
         boxes[i].classList.add(`green-box`);
     }
+    console.log(`You win! Great job guessing ${correctWord}`);
 }
 
 function displayRsandWs (guessID, word) {
@@ -58,6 +54,7 @@ function displayRsandWs (guessID, word) {
     for(let i = 0; i < 5; i++) {
         if (boxes[i].innerText === word[i]){
             boxes[i].classList.add(`green-box`);
+            word = word.replace(boxes[i].innerText, `_`);
         } else if (word.includes(boxes[i].innerText)) {
             boxes[i].classList.add(`yellow-box`);
             word = word.replace(boxes[i].innerText, `_`);
@@ -80,29 +77,51 @@ async function fetchWordData () {
     }
 }
 
+async function validateSubmission (userGuess) {
+    try {
+        const response = await fetch(`https://words.dev-apis.com/validate-word`, {
+            method: `POST`,
+            body: JSON.stringify({
+                word: `${userGuess}` 
+            })
+        })
+        if (!response.ok) {
+            throw new Error(`Could not fetch resource.`);
+        }
+        const data = await response.json();
+        return data.validWord;
+    } catch(error) {
+        console.error(error);
+    }
+}
 
 async function init () {
     let guessNum = 1;
     let inputNum = 1;
     let lock = true;
     let word;
+    let validWord;
     
     await fetchWordData().then((aWord) => {
         word = aWord;
         lock = false;
     });
 
-    window.addEventListener(`keydown`, (e) => {
+    // await validateSubmission(userGuess).then((wordValidated) => {
+    //     validWord = wordValidated;
+    // });
+    
+    window.addEventListener(`keydown`, async (e) => {
         if(!lock) { // lock or unlocked game state
             let keyPress = e.key;
             let inputID = `input-` + inputNum;
             let guessID = `guess-` + guessNum;
-    
+            
             if (isLetter(keyPress) && isEmpty(guessID, inputID)) {
                 if (inputNum < 5) {
                     inputNum++;
                 } 
-                changeInnerText(guessID, inputID, keyPress);
+                changeInnerText(guessID, inputID, keyPress.toLowerCase());
             } else if (isBackSpace(keyPress)) {
                 if (inputNum > 1 && isEmpty(guessID, inputID)) {
                     inputNum--;
@@ -112,18 +131,22 @@ async function init () {
             } else if (isEnter(keyPress)) {
                 let userGuess = constructGuessString(guessID);
                 if (userGuess.length == 5) {
-                    if(validateSubmission()) {
+                    let validationResult = await validateSubmission(userGuess);
+                    let hasWon = false;
+                    console.log(`validationResult: ${validationResult}`);
+                    if(validationResult) {
                         let correctGuess = submitGuess(word, userGuess);
                         if (correctGuess) {
-                            winState(guessID); 
+                            winState(guessID, word); 
+                            hasWon = true;
                             lock = true;
                         } else {
                             displayRsandWs(guessID, word);
                         }
                     }
                     guessNum++; // move focus to next row
-                    if (guessNum > 6) { 
-                        loseState(); // TODO: finish loseState()
+                    if ((guessNum > 6) && (!hasWon)) { 
+                        loseState(word); // TODO: finish loseState()
                         lock = true;
                         // TODO: add reset state
                     }
