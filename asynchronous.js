@@ -237,3 +237,21 @@ async function fetchDataFromUserInput () {
         console.error(error);
     }
 }
+
+document.getElementById(`btn-7`).addEventListener(`click`, () => {
+    console.log(`-----------------------btn-7----------------------`);
+    async function fetchWordData () {
+        try {
+            const response = await fetch(`https://words.dev-apis.com/word-of-the-day/`);
+            if (!response.ok) {
+                throw new Error(`Could not fetch resource.`);
+            }
+            const data = await response.json();
+            console.log(data.word);
+
+        } catch(error) {
+            console.error(error);
+        }
+    }
+    fetchWordData();
+});
