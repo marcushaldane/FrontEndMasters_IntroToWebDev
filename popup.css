@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    /*font-family:'Courier New', Courier, monospace;*/
+    font-family: 'Times New Roman', Times, serif;
+}
+.page-title {
+    /*font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
+    font-weight: lighter;
+}
+
+.nav {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    row-gap: 25px;
+    align-items: center;
+}
+
+.hide-list-bullets {
+    list-style-type:none;
+    padding: 0;
+}
+
+.jc-sa {
+    justify-content: space-around;
+}
