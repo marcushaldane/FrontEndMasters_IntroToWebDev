@@ -16,6 +16,9 @@ body {
     color: white;
     padding: 10px;
     border-radius: 5px;
+    a {
+        color: white;
+    }
 }
 
 .flex-container {
