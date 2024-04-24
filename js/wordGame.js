@@ -56,9 +56,9 @@ function winState (guessID, correctWord, winModal) {
     const winModalHeader = document.getElementById(`modal-header`);
     const winModalTitle = document.getElementById(`modal-title`);
     const winModalBody = document.getElementById(`modal-body`);
-    winModalHeader.style.background = `#00bc02`
+    winModalHeader.style.background = `#367e21`
     winModalTitle.innerText = `You've Won!`;
-    winModalBody.innerHTML = `Great job guessing <span style="color: #00bc02; font-weight: bold; background-color: black; padding-left: 2px; padding-right: 2px; border: 1px solid black; border-radius: 2px;">${correctWord.toUpperCase()}</span>. Keep up the good work!`;
+    winModalBody.innerHTML = `Great job guessing <span style="color: #367e21; font-weight: bold; padding-left: 2px; padding-right: 2px;">${correctWord.toUpperCase()}</span>. Keep up the good work!`;
     openModal(winModal);
 }
 
@@ -201,6 +201,7 @@ async function init () {
                     } else {
                         shakeBoxes(guessID);
                         // https://www.youtube.com/watch?v=mYZodBgTjsU
+                        // https://github.com/xfian-cc/shaking_input/tree/main
                     }
                     if ((guessNum > 6) && (!hasWon)) { 
                         loseState(word, myModal); // TODO: finish loseState()
