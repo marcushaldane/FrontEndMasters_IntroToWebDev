@@ -73,3 +73,89 @@ body {
     background-color: green;
     color: white;
 }
+
+/* Followed `web dev simplified`'s tutorial video on modals: https://www.youtube.com/watch?v=MBaw_6cPmAw */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 3px solid black;
+    border-radius: 2px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.modal-header .modal-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-header .close-btn {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 10px 15px;
+    /* display: flex;
+    align-items: center;
+    justify-content: space-around; */
+    /* border-bottom: 1px solid black; */
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.play-again {
+    cursor: pointer;
+    /* border: none; */
+    /* outline: none; */
+    /* background: none; */
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px 15px;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    pointer-events: none;
+}
+
+#overlay.active {
+    pointer-events: all;
+    opacity: 1;
+}
+/* Followed `web dev simplified`'s tutorial video on modals: https://www.youtube.com/watch?v=MBaw_6cPmAw */
+

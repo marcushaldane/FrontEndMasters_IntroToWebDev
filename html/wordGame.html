@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./../css/wordGame.css" rel="stylesheet"></div>
-    <link href="./../media/personal_favicon_v1.png" rel="icon" type="image/x-icon"></div>
+    <link href="./../css/wordGame.css" rel="stylesheet">
+    <link href="./../media/personal_favicon_v1.png" rel="icon" type="image/x-icon">
     <title>Word Game</title>
 </head>
 <body>
@@ -68,6 +68,31 @@
         <div id="input-4" class="input-4 input-box"></div>
         <div id="input-5" class="input-5 input-box"></div>
     </div>
+
+    <!-- Followed `web dev simplified`'s tutorial video on modals: https://www.youtube.com/watch?v=MBaw_6cPmAw -->
+    <!-- <button data-modal-target="#modal">Click To Show Modal</button> -->
+    <!-- <div id="modal" class="modal">
+        <div class="modal-header">
+            <div class="modal-title"></div>
+            <button data-close-button class="close-btn">&times;</button>
+        </div>
+        <div id="modal-body" class="modal-body"></div>
+    </div>
+    <div id="overlay"></div> -->
+    <!-- Followed `web dev simplified`'s tutorial video on modals: https://www.youtube.com/watch?v=MBaw_6cPmAw -->
+
+    <!-- <button id="my-modal">Modal Simplified</button> -->
+    <div id="modal" class="modal">
+        <div id="modal-header" class="modal-header">
+            <div id="modal-title" class="modal-title"></div>
+            <button id="close-btn" class="close-btn">&times;</button>
+        </div>
+        <div id="modal-body" class="modal-body"></div>
+        <div id="options" class="options">
+            <button id="play-again" class="play-again">Play Again!</button>
+        </div>
+    </div>
+    <div id="overlay"></div>
 
     <script src="./../js/wordGame.js"></script>
 </body>

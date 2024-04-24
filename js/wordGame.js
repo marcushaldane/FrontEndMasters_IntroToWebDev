@@ -35,17 +35,31 @@ function submitGuess (wotd, userGuess) {
     return false;
 }
 
-function loseState (correctWord) {
+function loseState (correctWord, loseModal) {
     console.log(`You lose! The word was ${correctWord}`);
+    const loseModalHeader = document.getElementById(`modal-header`);
+    const loseModalTitle = document.getElementById(`modal-title`);
+    const loseModalBody = document.getElementById(`modal-body`);
+    loseModalHeader.style.background = `#f10f0f`
+    loseModalTitle.innerText = `You Lost!`;
+    loseModalBody.innerHTML = `The word was <span style="color: #f10f0f; font-weight: bold; padding-left: 2px; padding-right: 2px;">${correctWord.toUpperCase()}</span>. You should try again!`;
+    openModal(loseModal);
 }
 
-function winState (guessID, correctWord) {
+function winState (guessID, correctWord, winModal) {
     // console.log(`guessID: ${guessID}`);
     let boxes = document.getElementById(guessID).children;
     for(let i = 0; i < 5; i++) {
         boxes[i].classList.add(`green-box`);
     }
     console.log(`You win! Great job guessing ${correctWord}`);
+    const winModalHeader = document.getElementById(`modal-header`);
+    const winModalTitle = document.getElementById(`modal-title`);
+    const winModalBody = document.getElementById(`modal-body`);
+    winModalHeader.style.background = `#00bc02`
+    winModalTitle.innerText = `You've Won!`;
+    winModalBody.innerHTML = `Great job guessing <span style="color: #00bc02; font-weight: bold; background-color: black; padding-left: 2px; padding-right: 2px; border: 1px solid black; border-radius: 2px;">${correctWord.toUpperCase()}</span>. Keep up the good work!`;
+    openModal(winModal);
 }
 
 function displayRsandWs (guessID, word) {
@@ -61,6 +75,11 @@ function displayRsandWs (guessID, word) {
             // console.log(`word: ${word}`);
         }
     }
+}
+
+function shakeBoxes (guessID) {
+    let boxes = document.getElementById(guessID).children;
+
 }
 
 async function fetchWordData () {
@@ -95,21 +114,55 @@ async function validateSubmission (userGuess) {
     }
 }
 
+// Followed `web dev simplified`'s tutorial video on modals: https://www.youtube.com/watch?v=MBaw_6cPmAw
+function openModal (modal) {
+    if (modal == null) {return}
+    modal.classList.add(`active`);
+    overlay.classList.add(`active`);
+}
+
+function closeModal (modal) {
+    if (modal == null) {return}
+    modal.classList.remove(`active`);
+    overlay.classList.remove(`active`);
+}
+// Followed `web dev simplified`'s tutorial video on modals: https://www.youtube.com/watch?v=MBaw_6cPmAw
+
+
+
 async function init () {
     let guessNum = 1;
     let inputNum = 1;
     let lock = true;
     let word;
-    let validWord;
     
+    // const myModalButton = document.getElementById(`my-modal`);
+    const myModal = document.getElementById(`modal`);
+    const myOverlay = document.getElementById(`overlay`);
+    
+    // myModalButton.addEventListener(`click`, () => {
+    //     openModal(myModal);
+    //     // console.log(`button clicked`);
+    // })
+    
+    document.getElementById(`play-again`).addEventListener(`click`, () => {
+        closeModal(myModal);
+        location.reload();
+    })
+
+    document.getElementById(`close-btn`).addEventListener(`click`, () => {
+        closeModal(myModal);
+    })
+    
+    myOverlay.addEventListener(`click`, () => {
+        closeModal(myModal);
+    })
+
+
     await fetchWordData().then((aWord) => {
         word = aWord;
         lock = false;
     });
-
-    // await validateSubmission(userGuess).then((wordValidated) => {
-    //     validWord = wordValidated;
-    // });
     
     window.addEventListener(`keydown`, async (e) => {
         if(!lock) { // lock or unlocked game state
@@ -137,20 +190,24 @@ async function init () {
                     if(validationResult) {
                         let correctGuess = submitGuess(word, userGuess);
                         if (correctGuess) {
-                            winState(guessID, word); 
+                            winState(guessID, word, myModal); 
                             hasWon = true;
                             lock = true;
                         } else {
                             displayRsandWs(guessID, word);
                         }
+                        guessNum++; // move focus to next row
+                        inputNum = 1;
+                    } else {
+                        shakeBoxes(guessID);
+                        // https://www.youtube.com/watch?v=mYZodBgTjsU
                     }
-                    guessNum++; // move focus to next row
                     if ((guessNum > 6) && (!hasWon)) { 
-                        loseState(word); // TODO: finish loseState()
+                        loseState(word, myModal); // TODO: finish loseState()
                         lock = true;
                         // TODO: add reset state
                     }
-                    inputNum = 1;
+                    
                 } else {
                     // alert(`Guess Too Short!`)
                 }

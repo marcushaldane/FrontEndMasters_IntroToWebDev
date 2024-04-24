@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./../css/popup.css" rel="stylesheet"></div>
-    <link href="./../media/personal_favicon_v1.png" rel="icon" type="image/x-icon"></div>
+    <link href="./../css/popup.css" rel="stylesheet">
+    <link href="./../media/personal_favicon_v1.png" rel="icon" type="image/x-icon">
     <title>Custom Pop-Up Experiment Page</title>
 </head>
 <body>
@@ -25,9 +25,9 @@
         </nav>
     </header>
     <br>
-    <div>test</div>
+    
     <!-- Followed `web dev simplified`'s tutorial video on modals: https://www.youtube.com/watch?v=MBaw_6cPmAw -->
-    <button data-modal-target="#modal">Click To Show Modal</button>
+    <!-- <button data-modal-target="#modal">Click To Show Modal</button>
     <div id="modal" class="modal">
         <div class="modal-header">
             <div class="modal-title">Example Modal</div>
@@ -35,9 +35,19 @@
         </div>
         <div class="modal-body">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem non vitae laborum amet deleniti deserunt soluta, fugiat illo pariatur esse officia quasi? Magni expedita distinctio ipsum, cumque placeat non possimus inventore ab aliquam nisi, sequi ullam facere. Amet sed, libero eligendi error commodi deleniti nesciunt consequuntur saepe suscipit officia natus quis tempora adipisci odio? Accusantium, sapiente iusto esse ut vitae debitis dicta asperiores incidunt eaque dolor hic consectetur suscipit expedita corrupti sint, veritatis voluptate omnis odit quas. Distinctio, animi laudantium.</div>
     </div>
-    <div id="overlay"></div>
+    <div id="overlay"></div> -->
     <!-- Followed `web dev simplified`'s tutorial video on modals: https://www.youtube.com/watch?v=MBaw_6cPmAw -->
     
+    <button id="my-modal">Click To Display Custom Simplified Modal</button>
+    <div id="modal" class="modal">
+        <div class="modal-header">
+            <div class="modal-title">Modal Header</div>
+            <button id="close-btn" class="close-btn">&times;</button>
+        </div>
+        <div class="modal-body">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo natus vero, reiciendis tenetur quaerat sint officiis accusamus odio, dignissimos eos illum quasi minus consequuntur. Nostrum quasi impedit dolore non id ad quod, laboriosam fuga soluta ipsam assumenda suscipit beatae commodi?</div>
+    </div>
+    <div id="overlay"></div>
+
     <script src="./../js/popup.js"></script>
 
 </body>
