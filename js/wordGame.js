@@ -77,9 +77,18 @@ function displayRsandWs (guessID, word) {
     }
 }
 
+
 function shakeBoxes (guessID) {
     let boxes = document.getElementById(guessID).children;
-
+    for(let i = 0; i < 5; i++) {
+        boxes[i].classList.add(`red-border-box`);
+    }
+    function resetBoxes() {
+        for(let i = 0; i < 5; i++) {
+            boxes[i].classList.remove(`red-border-box`);
+        }    
+    }
+    setTimeout(resetBoxes, 150);
 }
 
 async function fetchWordData () {
@@ -211,6 +220,7 @@ async function init () {
                     
                 } else {
                     // alert(`Guess Too Short!`)
+                    
                 }
             } 
         } // lock or unlocked game state

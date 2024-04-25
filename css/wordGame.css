@@ -74,6 +74,10 @@ body {
     color: white;
 }
 
+.red-border-box {
+    border: 3px solid red;
+}
+
 /* Followed `web dev simplified`'s tutorial video on modals: https://www.youtube.com/watch?v=MBaw_6cPmAw */
 .modal {
     position: fixed;
