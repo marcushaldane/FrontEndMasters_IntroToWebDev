@@ -1,7 +1,6 @@
 
-# Introduction to WebDev 
-## Frontend Masters
-### Marcus Haldane 
+# Introduction to WebDev - Following Frontend Masters Course
+## Marcus Haldane 
 #### April 2024
 
 ---
